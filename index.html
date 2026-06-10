@@ -379,6 +379,37 @@
             box-shadow: 0 15px 40px rgba(192, 192, 192, 0.5);
         }
 
+        .video-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .video-link {
+            display: block;
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.12) 0%, rgba(192, 192, 192, 0.04) 100%);
+            color: #c0c0c0;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid #4a4a4a;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85em;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .video-link:hover {
+            background: linear-gradient(135deg, #c0c0c0 0%, #e0e0e0 100%);
+            color: #1a1a1a;
+            border-color: #c0c0c0;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(192, 192, 192, 0.3);
+        }
+
         .nutrition-table {
             width: 100%;
             border-collapse: collapse;
@@ -541,6 +572,10 @@
         @media (max-width: 380px) {
             header h1 {
                 font-size: 1.5em;
+            }
+
+            .video-list {
+                grid-template-columns: 1fr;
             }
 
             .info-grid {
@@ -1281,6 +1316,15 @@
                             </div>
                             <div class="section-title">💡 Clave</div>
                             <div class="tip">✓ 30s = DA TODO. Quema metabólica brutal</div>
+                            <div class="exercise-section">
+                                <div class="section-title">🎥 Videos por Ejercicio</div>
+                                <div class="video-list">
+                                    <a href="https://www.youtube.com/watch?v=NKgiS9js_M0" target="_blank" class="video-link">▶️ Jump Squats</a>
+                                    <a href="https://www.youtube.com/watch?v=awbFx6HqWns" target="_blank" class="video-link">▶️ Burpees</a>
+                                    <a href="https://www.youtube.com/watch?v=zfntw-bubyU" target="_blank" class="video-link">▶️ Mountain Climbers</a>
+                                    <a href="https://www.youtube.com/watch?v=NYLOoumdJ1Y" target="_blank" class="video-link">▶️ Box Jumps</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
