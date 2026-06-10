@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutina Andrea - Luxury Dark Complete</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c0c0c0;
+            border-radius: 5px;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-bottom: 2px solid #c0c0c0;
+            padding: 50px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #c0c0c0;
+            text-shadow: 0 4px 20px rgba(192, 192, 192, 0.3);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1em;
+            color: #b0b0b0;
+            letter-spacing: 1px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 25px;
+            padding: 0 20px;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.1) 0%, rgba(192, 192, 192, 0.05) 100%);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #c0c0c0;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(192, 192, 192, 0.2);
+        }
+
+        .info-card strong {
+            display: block;
+            font-size: 0.85em;
+            color: #c0c0c0;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .info-card em {
+            font-style: normal;
+            font-size: 1.4em;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #3a3a3a;
+            flex-wrap: wrap;
+            padding-bottom: 0;
+        }
+
+        .tab-btn {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #2d2d2d 0%, #3a3a3a 100%);
+            border: none;
+            font-size: 1.05em;
+            cursor: pointer;
+            border-bottom: 4px solid transparent;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 600;
+            color: #b0b0b0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tab-btn:hover {
+            color: #c0c0c0;
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            color: #c0c0c0;
+            border-bottom-color: #c0c0c0;
+            background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
+            box-shadow: 0 5px 15px rgba(192, 192, 192, 0.2);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .day-section {
+            margin-bottom: 60px;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .day-title {
+            font-size: 2em;
+            margin-bottom: 25px;
+            color: white;
+            padding: 20px 25px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #2d2d2d 0%, #3a3a3a 100%);
+            border-left: 6px solid #c0c0c0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .exercises-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .exercise-card {
+            background: linear-gradient(135deg, #3a3a3a 0%, #323232 100%);
+            border: 1.5px solid #4a4a4a;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+
+        .exercise-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.1), transparent);
+            transition: left 0.5s;
+            z-index: 1;
+        }
+
+        .exercise-card:hover {
+            transform: translateY(-15px);
+            border-color: #c0c0c0;
+            box-shadow: 0 20px 50px rgba(192, 192, 192, 0.3);
+        }
+
+        .exercise-card:hover::before {
+            left: 100%;
+        }
+
+        .exercise-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-bottom: 2px solid #c0c0c0;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .exercise-name {
+            font-weight: 700;
+            font-size: 1.3em;
+            color: #c0c0c0;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .exercise-stats {
+            font-size: 0.9em;
+            color: #a0a0a0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .stat {
+            background: rgba(192, 192, 192, 0.1);
+            padding: 8px;
+            border-radius: 6px;
+            border-left: 3px solid #c0c0c0;
+            transition: all 0.3s;
+        }
+
+        .stat:hover {
+            background: rgba(192, 192, 192, 0.15);
+            transform: translateX(3px);
+        }
+
+        .exercise-body {
+            padding: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .exercise-section {
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: #c0c0c0;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-content {
+            font-size: 0.95em;
+            color: #c0c0c0;
+            line-height: 1.7;
+        }
+
+        .paso {
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.08) 0%, rgba(192, 192, 192, 0.03) 100%);
+            border-left: 4px solid #c0c0c0;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 6px;
+            font-size: 0.9em;
+            color: #d0d0d0;
+            transition: all 0.3s;
+        }
+
+        .paso:hover {
+            padding-left: 15px;
+            background: rgba(192, 192, 192, 0.12);
+        }
+
+        .error {
+            background: linear-gradient(135deg, rgba(220, 50, 50, 0.1) 0%, rgba(220, 50, 50, 0.05) 100%);
+            border-left: 4px solid #dc3232;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 6px;
+            font-size: 0.9em;
+            color: #ff9999;
+        }
+
+        .tip {
+            background: linear-gradient(135deg, rgba(100, 200, 100, 0.1) 0%, rgba(100, 200, 100, 0.05) 100%);
+            border-left: 4px solid #64c864;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 6px;
+            font-size: 0.9em;
+            color: #a0ffa0;
+        }
+
+        .video-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #c0c0c0 0%, #e0e0e0 100%);
+            color: #1a1a1a;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 15px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(192, 192, 192, 0.3);
+            font-size: 0.9em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .video-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .video-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(192, 192, 192, 0.5);
+        }
+
+        .nutrition-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .nutrition-table thead {
+            background: linear-gradient(135deg, #c0c0c0 0%, #e0e0e0 100%);
+            color: #1a1a1a;
+        }
+
+        .nutrition-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nutrition-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #3a3a3a;
+            color: #d0d0d0;
+        }
+
+        .nutrition-table tbody tr {
+            background: linear-gradient(135deg, #3a3a3a 0%, #323232 100%);
+            transition: all 0.3s;
+        }
+
+        .nutrition-table tbody tr:hover {
+            background: linear-gradient(135deg, #4a4a4a 0%, #3a3a3a 100%);
+            box-shadow: inset 0 0 15px rgba(192, 192, 192, 0.1);
+        }
+
+        .page-title {
+            font-size: 2em;
+            margin: 40px 0 30px 0;
+            color: #c0c0c0;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #c0c0c0;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .nutrition-highlight {
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.15) 0%, rgba(192, 192, 192, 0.05) 100%);
+            padding: 25px;
+            border-left: 6px solid #c0c0c0;
+            border-radius: 12px;
+            margin: 25px 0;
+            color: #e0e0e0;
+            box-shadow: 0 8px 25px rgba(192, 192, 192, 0.15);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 30px;
+            text-align: center;
+            color: #888;
+            border-top: 2px solid #c0c0c0;
+            margin-top: 60px;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 8px 0;
+            color: #a0a0a0;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            border-radius: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 12px;
+                margin: 25px auto;
+            }
+
+            header {
+                padding: 35px 15px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+                letter-spacing: 1px;
+            }
+
+            header p {
+                font-size: 0.9em;
+                letter-spacing: 0.5px;
+            }
+
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .info-card {
+                padding: 12px;
+            }
+
+            .info-card em {
+                font-size: 1.2em;
+            }
+
+            .tabs {
+                gap: 8px;
+                margin-bottom: 25px;
+            }
+
+            .tab-btn {
+                flex: 1;
+                padding: 12px 10px;
+                font-size: 0.85em;
+                letter-spacing: 0.5px;
+            }
+
+            .exercises-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .day-title {
+                font-size: 1.3em;
+                padding: 15px 18px;
+            }
+
+            .exercise-name {
+                font-size: 1.1em;
+            }
+
+            .exercise-stats {
+                font-size: 0.85em;
+            }
+
+            .exercise-body {
+                padding: 18px;
+            }
+
+            .page-title {
+                font-size: 1.4em;
+                margin: 25px 0 20px 0;
+            }
+
+            .nutrition-table th,
+            .nutrition-table td {
+                padding: 10px;
+                font-size: 0.85em;
+                white-space: nowrap;
+            }
+        }
+
+        @media (max-width: 380px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .tab-btn {
+                font-size: 0.75em;
+                padding: 10px 6px;
+            }
+
+            .nutrition-table th,
+            .nutrition-table td {
+                font-size: 0.8em;
+                padding: 8px;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>💪 RUTINA ANDREA COMPLETA</h1>
+        <p>LUXURY TRAINING PROGRAM • DARK EDITION</p>
+        <div class="info-grid">
+            <div class="info-card">
+                <strong>Edad</strong>
+                <em>33</em>
+            </div>
+            <div class="info-card">
+                <strong>Estatura</strong>
+                <em>1.75m</em>
+            </div>
+            <div class="info-card">
+                <strong>Peso</strong>
+                <em>65-70kg</em>
+            </div>
+            <div class="info-card">
+                <strong>Objetivo</strong>
+                <em>Glúteo & Pierna</em>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('training')">🏋️ Entrenamiento</button>
+            <button class="tab-btn" onclick="switchTab('nutrition')">🍽️ Nutrición</button>
+        </div>
+
+        <div id="training" class="tab-content active">
+            <h2 class="page-title">PROGRAMA DE ENTRENAMIENTO • 5 DÍAS COMPLETO</h2>
+
+            <!-- LUNES -->
+            <div class="day-section">
+                <div class="day-title">🔥 LUNES - GLÚTEO MASIVO 1 + POSTERIOR</div>
+                <div class="exercises-grid">
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">1. Hip Thrust</div>
+                            <div class="exercise-stats">
+                                <div class="stat">4x8-10</div>
+                                <div class="stat">90s Rest</div>
+                                <div class="stat">⭐ KING</div>
+                                <div class="stat">Explosivo</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición Inicial</div>
+                                <div class="section-content">Espalda en banco, pies en piso, empuje de cadera explosivo hacia arriba</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Técnica</div>
+                                <div class="paso">1. Baja cadera hacia suelo sin apoyar completamente</div>
+                                <div class="paso">2. Sube explosivamente en línea recta</div>
+                                <div class="paso">3. Aprieta glúteo 2 segundos en la cúspide</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">💡 Clave</div>
+                                <div class="tip">✓ El mejor ejercicio para glúteo - hazlo BIEN</div>
+                            </div>
+                            <a href="https://www.youtube.com/watch?v=pBH7pKHn-dI" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">2. Sentadilla Búlgara</div>
+                            <div class="exercise-stats">
+                                <div class="stat">3x10-12</div>
+                                <div class="stat">75s Rest</div>
+                                <div class="stat">Unilateral</div>
+                                <div class="stat">Control</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición Inicial</div>
+                                <div class="section-content">Pie atrás elevado en banco, pie delantero adelante</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Técnica</div>
+                                <div class="paso">1. Baja rodilla delantera casi al suelo</div>
+                                <div class="paso">2. Rodilla trasera baja sin tocar suelo</div>
+                                <div class="paso">3. Sube por talón delantero explosivamente</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">💡 Clave</div>
+                                <div class="tip">✓ Perfecto para balance y glúteo unilateral</div>
+                            </div>
+                            <a href="https://www.youtube.com/watch?v=2C-uNgKwPLE" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">3. Peso Muerto Rumano</div>
+                            <div class="exercise-stats">
+                                <div class="stat">3x10-12</div>
+                                <div class="stat">75s Rest</div>
+                                <div class="stat">Posterior</div>
+                                <div class="stat">Bisagra</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición Inicial</div>
+                                <div class="section-content">De pie, rodillas ligéramente flexionadas, barra en manos</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Técnica</div>
+                                <div class="paso">1. Hincha cadera hacia ATRÁS (bisagra de cadera)</div>
+                                <div class="paso">2. Baja peso hasta sentir estiramiento</div>
+                                <div class="paso">3. Sube empujando cadera adelante</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">⚠️ CRÍTICO</div>
+                                <div class="error">❌ NO REDONDEES LA ESPALDA - Causa lesión</div>
+                            </div>
+                            <a href="https://www.youtube.com/watch?v=HwMngJ1DWO8" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">4. Leg Curl Acostada</div>
+                            <div class="exercise-stats">
+                                <div class="stat">3x12-15</div>
+                                <div class="stat">60s Rest</div>
+                                <div class="stat">Máquina</div>
+                                <div class="stat">Acesorio</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición Inicial</div>
+                                <div class="section-content">Acostada boca abajo, pies bajo rodillo, agarra mangos</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Técnica</div>
+                                <div class="paso">1. Extiende piernas sin bloquear rodillas</div>
+                                <div class="paso">2. Flexiona rodillas trayendo talones a glúteos</div>
+                                <div class="paso">3. Aprieta isquiotibiales en la cúspide</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">💡 Clave</div>
+                                <div class="tip">✓ Control > peso. Movimiento puro.</div>
+                            </div>
+                            <a href="https://www.youtube.com/watch?v=vl5nUdE9mWM" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MARTES -->
+            <div class="day-section">
+                <div class="day-title">💎 MARTES - UPPER BODY COMPLETO</div>
+                <div class="exercises-grid">
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">1. Press de Pecho</div>
+                            <div class="exercise-stats">
+                                <div class="stat">4x8-10</div>
+                                <div class="stat">90s Rest</div>
+                                <div class="stat">⭐ KING</div>
+                                <div class="stat">Pesado</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición</div>
+                                <div class="section-content">Acostada en banco. Pies en suelo. Barra a altura del pecho. Codos 45°.</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Ejecución</div>
+                                <div class="paso">1. Baja barra controladamente hacia pecho</div>
+                                <div class="paso">2. Sube explosivamente sin bloquear codos</div>
+                                <div class="paso">3. Aprieta pecho arriba</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ Movimiento base para pecho</div>
+                            <a href="https://www.youtube.com/watch?v=bkn3mxkJ6Ao" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">2. Remo con Barra</div>
+                            <div class="exercise-stats">
+                                <div class="stat">3x8-10</div>
+                                <div class="stat">90s Rest</div>
+                                <div class="stat">Pesado</div>
+                                <div class="stat">Espalda</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición</div>
+                                <div class="section-content">De pie, pies ancho de hombros. Barra en manos extendidas. Rodillas flex.</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Ejecución</div>
+                                <div class="paso">1. Codos pegados, tira barra hacia abdomen</div>
+                                <div class="paso">2. Levanta hasta pecho inferior</div>
+                                <div class="paso">3. Baja controladamente</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ Excelente para espalda media/alta</div>
+                            <a href="https://www.youtube.com/watch?v=SNmfFKIFHAo" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">3. Incline Dumbbells</div>
+                            <div class="exercise-stats">
+                                <div class="stat">3x10-12</div>
+                                <div class="stat">75s Rest</div>
+                                <div class="stat">30-45°</div>
+                                <div class="stat">Pecho Sup</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición</div>
+                                <div class="section-content">Banco inclinado 30-45°. Mancuernas a altura pecho. Pies en suelo.</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Ejecución</div>
+                                <div class="paso">1. Baja mancuernas hacia pecho</div>
+                                <div class="paso">2. Sube sin bloquear codos</div>
+                                <div class="paso">3. Aprieta pecho superior</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ Enfatiza pecho superior</div>
+                            <a href="https://www.youtube.com/watch?v=Xb_7ljXEn-4" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">4. Jalón Pulldown</div>
+                            <div class="exercise-stats">
+                                <div class="stat">3x10-12</div>
+                                <div class="stat">75s Rest</div>
+                                <div class="stat">Máquina</div>
+                                <div class="stat">Lats</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición</div>
+                                <div class="section-content">Sentada. Barra arriba, brazos extendidos. Pies en suelo.</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Ejecución</div>
+                                <div class="paso">1. Jala barra hacia pecho - codos abiertos</div>
+                                <div class="paso">2. Baja hasta pecho superior</div>
+                                <div class="paso">3. Aprieta lats</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ Excelente para espalda lateral</div>
+                            <a href="https://www.youtube.com/watch?v=G6Cq7Z6RVd4" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">5. Curl + Tríceps (Superserie)</div>
+                            <div class="exercise-stats">
+                                <div class="stat">2x12-15</div>
+                                <div class="stat">60s Rest</div>
+                                <div class="stat">Bombeo</div>
+                                <div class="stat">Brazos</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Estructura</div>
+                                <div class="section-content">Realiza ambos ejercicios SIN PAUSA. Descansa 60s después.</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ A) Curl Dumbbell</div>
+                                <div class="paso">1. De pie, mancuernas a los lados</div>
+                                <div class="paso">2. Flexiona codos a hombros</div>
+                                <div class="paso">3. Codos pegados, solo brazos mueven</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ B) Tríceps Pushdown</div>
+                                <div class="paso">1. Parada frente a polea</div>
+                                <div class="paso">2. Extiende codos hacia abajo</div>
+                                <div class="paso">3. Aprieta tríceps abajo</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ Superserie = más volumen</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MIÉRCOLES -->
+            <div class="day-section">
+                <div class="day-title">🍑 MIÉRCOLES - GLÚTEO MASIVO 2 + CUÁDRICEPS</div>
+                <div class="exercises-grid">
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">1. Sentadilla Profunda</div>
+                            <div class="exercise-stats">
+                                <div class="stat">4x8-10</div>
+                                <div class="stat">2min Rest</div>
+                                <div class="stat">⭐ KING</div>
+                                <div class="stat">Explosivo</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición</div>
+                                <div class="section-content">Pies ancho hombros. Barra en trapecios. Pecho arriba. Espalda recta.</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Ejecución</div>
+                                <div class="paso">1. Respira profundo, activa core</div>
+                                <div class="paso">2. Baja hasta máxima profundidad (cadera < rodillas)</div>
+                                <div class="paso">3. Sube empujando por talones</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ El movimiento MÁS IMPORTANTE para ti</div>
+                            <a href="https://www.youtube.com/watch?v=T0v9BS8F6xk" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">2. Abducción de Cadera</div>
+                            <div class="exercise-stats">
+                                <div class="stat">3x12-15</div>
+                                <div class="stat">75s Rest</div>
+                                <div class="stat">Máquina</div>
+                                <div class="stat">Glúteo Lat</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición</div>
+                                <div class="section-content">Sentada en máquina. Espalda apoyada. Manos en mangos.</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Ejecución</div>
+                                <div class="paso">1. Abre piernas contra resistencia</div>
+                                <div class="paso">2. Lleva rodillas lo más lejos posible</div>
+                                <div class="paso">3. Aprieta glúteo lateral (side butt)</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ CRÍTICO para glúteo LATERAL (shelf)</div>
+                            <a href="https://www.youtube.com/watch?v=wLvM-kKgV2M" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">3. Leg Press</div>
+                            <div class="exercise-stats">
+                                <div class="stat">3x10-12</div>
+                                <div class="stat">90s Rest</div>
+                                <div class="stat">Máquina</div>
+                                <div class="stat">Volumen</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición</div>
+                                <div class="section-content">Pies ancho hombros en plataforma. Espalda apoyada. Cadera pegada asiento.</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Ejecución</div>
+                                <div class="paso">1. Baja a 90 grados NO aplastes</div>
+                                <div class="paso">2. Sube empujando peso</div>
+                                <div class="paso">3. Aprieta cuádriceps arriba</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ Pies ancho = más glúteo</div>
+                            <a href="https://www.youtube.com/watch?v=V2Wt-LgKs70" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">4. Extensión Cuádriceps</div>
+                            <div class="exercise-stats">
+                                <div class="stat">3x12-15</div>
+                                <div class="stat">60s Rest</div>
+                                <div class="stat">Máquina</div>
+                                <div class="stat">Quad</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición</div>
+                                <div class="section-content">Sentada. Espalda apoyada. Pies bajo rodillo. Agarrar mangos.</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Ejecución</div>
+                                <div class="paso">1. Extiende piernas arriba</div>
+                                <div class="paso">2. Llega a extensión completa</div>
+                                <div class="paso">3. Aprieta cuádriceps 1 segundo arriba</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ Aislamiento puro de cuádriceps</div>
+                            <a href="https://www.youtube.com/watch?v=dLpG0w9xOhk" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">5. Glute Kickback</div>
+                            <div class="exercise-stats">
+                                <div class="stat">2x15</div>
+                                <div class="stat">60s Rest</div>
+                                <div class="stat">Cable</div>
+                                <div class="stat">Acesorio</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición</div>
+                                <div class="section-content">De pie en polea. Pie fijo en suelo. Cuerda/mango en otro pie.</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Ejecución</div>
+                                <div class="paso">1. Levanta pierna atrás extendiendo completamente</div>
+                                <div class="paso">2. Aprieta glúteo en máxima extensión</div>
+                                <div class="paso">3. Baja controladamente</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ Aislamiento puro de glúteo - FINISHING</div>
+                            <a href="https://www.youtube.com/watch?v=bVrmtCI00Ys" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JUEVES -->
+            <div class="day-section">
+                <div class="day-title">✨ JUEVES - BRAZOS + ACCESORIOS COMPLETO</div>
+                <div class="exercises-grid">
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">1. Curl Dumbbell</div>
+                            <div class="exercise-stats">
+                                <div class="stat">3x12-15</div>
+                                <div class="stat">60s Rest</div>
+                                <div class="stat">Bombeo</div>
+                                <div class="stat">Bíceps</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición</div>
+                                <div class="section-content">De pie. Mancuernas en manos. Brazos extendidos a los lados.</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Técnica</div>
+                                <div class="paso">1. Flexiona codos llevando mancuernas a hombros</div>
+                                <div class="paso">2. Codos pegados - solo mueven brazos</div>
+                                <div class="paso">3. Baja controladamente</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ Bombeo muscular - siente contracción</div>
+                            <a href="https://www.youtube.com/watch?v=AVvAJe5Wh_Q" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">2. Tríceps Pushdown</div>
+                            <div class="exercise-stats">
+                                <div class="stat">3x12-15</div>
+                                <div class="stat">60s Rest</div>
+                                <div class="stat">Polea</div>
+                                <div class="stat">Bombeo</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición</div>
+                                <div class="section-content">Parada frente a polea. Codos doblados 90°. Cuerpo recto.</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Técnica</div>
+                                <div class="paso">1. Extiende codos hacia abajo</div>
+                                <div class="paso">2. Aprieta tríceps en extensión completa</div>
+                                <div class="paso">3. Sube controladamente</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ Movimiento puro - sin impulso</div>
+                            <a href="https://www.youtube.com/watch?v=VR6WE6vH9w8" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">3. Curl Martillo</div>
+                            <div class="exercise-stats">
+                                <div class="stat">3x12-15</div>
+                                <div class="stat">60s Rest</div>
+                                <div class="stat">Neutro</div>
+                                <div class="stat">Braquial</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición</div>
+                                <div class="section-content">De pie. Mancuernas agarre neutro (martillo). Brazos a lados.</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Técnica</div>
+                                <div class="paso">1. Flexiona codos hacia hombros</div>
+                                <div class="paso">2. Mantén agarre neutro todo tiempo</div>
+                                <div class="paso">3. Baja controladamente</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ Trabaja braquial - complemento perfecto</div>
+                            <a href="https://www.youtube.com/watch?v=DYT8mVVulM4" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">4. Fondos Tríceps</div>
+                            <div class="exercise-stats">
+                                <div class="stat">3x10-15</div>
+                                <div class="stat">75s Rest</div>
+                                <div class="stat">Peso Corp</div>
+                                <div class="stat">Efectivo</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición</div>
+                                <div class="section-content">Entre dos barras paralelas. Brazos extendidos. Cuerpo recto.</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Técnica</div>
+                                <div class="paso">1. Baja cuerpo flexionando codos</div>
+                                <div class="paso">2. Llega a 90 grados o más</div>
+                                <div class="paso">3. Sube extendiendo codos</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ Muy efectivo para peso corporal</div>
+                            <a href="https://www.youtube.com/watch?v=6VOD-PsDazQ" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">5. Curl Inverso</div>
+                            <div class="exercise-stats">
+                                <div class="stat">2x12-15</div>
+                                <div class="stat">60s Rest</div>
+                                <div class="stat">Pronado</div>
+                                <div class="stat">Antebrazo</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición</div>
+                                <div class="section-content">De pie. Mancuernas agarre pronado. Brazos a lados.</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Técnica</div>
+                                <div class="paso">1. Flexiona codos manteniendo pronación</div>
+                                <div class="paso">2. Sube hasta hombros</div>
+                                <div class="paso">3. Baja controladamente</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ Trabaja antebrazo y braquial</div>
+                            <a href="https://www.youtube.com/watch?v=1ifGAFt6cSQ" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">6. Extensión Tríceps Overhead</div>
+                            <div class="exercise-stats">
+                                <div class="stat">2x12-15</div>
+                                <div class="stat">60s Rest</div>
+                                <div class="stat">Control</div>
+                                <div class="stat">Finishing</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición</div>
+                                <div class="section-content">De pie o sentada. Mancuerna con dos manos sobre cabeza.</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Técnica</div>
+                                <div class="paso">1. Baja mancuerna detrás de cabeza flexionando codos</div>
+                                <div class="paso">2. Siente el estiramiento de tríceps</div>
+                                <div class="paso">3. Sube extendiendo codos arriba</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ Perfecto para finishing muscular</div>
+                            <a href="https://www.youtube.com/watch?v=0KYo0xVqsAU" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIERNES -->
+            <div class="day-section">
+                <div class="day-title">⚡ VIERNES - GLÚTEO METABOLIC + CARDIO HIIT</div>
+                <div class="exercises-grid">
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">1. Prensa de Cadera</div>
+                            <div class="exercise-stats">
+                                <div class="stat">4x10-12</div>
+                                <div class="stat">90s Rest</div>
+                                <div class="stat">🔥 Metabolic</div>
+                                <div class="stat">Machine</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Posición</div>
+                                <div class="section-content">Sentada en máquina plate-loaded. Espalda apoyada firmemente.</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Técnica</div>
+                                <div class="paso">1. Baja a 90 grados</div>
+                                <div class="paso">2. Sube empujando por talones</div>
+                                <div class="paso">3. Aprieta glúteo en extensión</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ Viernes es METABOLIC - quema máxima</div>
+                            <a href="https://www.youtube.com/watch?v=DLpJoHVDyGo" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">2. Escaladora Máquina</div>
+                            <div class="exercise-stats">
+                                <div class="stat">3x20-25</div>
+                                <div class="stat">75s Rest</div>
+                                <div class="stat">🔥 Cardio</div>
+                                <div class="stat">Metabolic</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Máquina</div>
+                                <div class="section-content">Escaladora inclinada. Ritmo rápido y controlado.</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Ejecución</div>
+                                <div class="paso">1. Sube intensidad - ritmo rápido</div>
+                                <div class="paso">2. Mantén 20-25 reps por serie</div>
+                                <div class="paso">3. Recupera 75 segundos</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ Cardio explosivo - quema máxima</div>
+                            <a href="https://www.youtube.com/watch?v=SLSJxdDNMrI" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">3. Camilla Inclinada</div>
+                            <div class="exercise-stats">
+                                <div class="stat">3x12-15</div>
+                                <div class="stat">75s Rest</div>
+                                <div class="stat">Incline 12-15%</div>
+                                <div class="stat">Glúteo</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Máquina</div>
+                                <div class="section-content">Caminadora inclinada. Ajusta inclinación 12-15% máximo.</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Ejecución</div>
+                                <div class="paso">1. Sube inclinación - NO máquina</div>
+                                <div class="paso">2. Camina controladamente</div>
+                                <div class="paso">3. Siente activación de glúteo</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ Mejor que plana para glúteo + cardio</div>
+                            <a href="https://www.youtube.com/watch?v=p14nMdLcE1I" target="_blank" class="video-btn">▶️ Ver Tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <div class="exercise-name">4. HIIT Final</div>
+                            <div class="exercise-stats">
+                                <div class="stat">10 min</div>
+                                <div class="stat">30s/30s</div>
+                                <div class="stat">🔥 EXPLOSIVO</div>
+                                <div class="stat">Quema</div>
+                            </div>
+                        </div>
+                        <div class="exercise-body">
+                            <div class="exercise-section">
+                                <div class="section-title">📍 Estructura HIIT</div>
+                                <div class="section-content">30 segundos MÁXIMA INTENSIDAD + 30 seg descanso (10 rondas)</div>
+                            </div>
+                            <div class="exercise-section">
+                                <div class="section-title">➡️ Ejercicios Rotativos</div>
+                                <div class="paso">• Jump Squats • Burpees • Mountain Climbers • Box Jumps</div>
+                                <div class="paso">Rota ejercicios cada 2 rondas</div>
+                            </div>
+                            <div class="section-title">💡 Clave</div>
+                            <div class="tip">✓ 30s = DA TODO. Quema metabólica brutal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="nutrition" class="tab-content">
+            <h2 class="page-title">PLAN NUTRICIONAL • 7 DÍAS COMPLETO</h2>
+            
+            <div class="nutrition-highlight">
+                <strong>📊 MACROS DIARIOS:</strong> 2,000-2,200 kcal | <strong>🥚 Proteína:</strong> 100-130g | <strong>🍚 Carbs:</strong> 140-160g | <strong>🥑 Grasas:</strong> 50-60g
+            </div>
+
+            <h3 style="color: #c0c0c0; margin: 30px 0 20px 0; font-size: 1.4em; border-bottom: 2px solid #c0c0c0; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">LUNES (Proteína Res)</h3>
+            <table class="nutrition-table">
+                <thead>
+                    <tr>
+                        <th>Comida</th>
+                        <th>Alimentos</th>
+                        <th>Proteína</th>
+                        <th>Carbs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Desayuno (7:30am)</strong></td>
+                        <td>3 huevos • 1 arepa • Café • Plátano</td>
+                        <td>15g</td>
+                        <td>45g</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Almuerzo (12:30pm)</strong></td>
+                        <td>150g res molida • Arroz blanco • Ensalada</td>
+                        <td>40g</td>
+                        <td>60g</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cena (7:00pm)</strong></td>
+                        <td>180g pechuga pollo • Papas cocidas • Brócoli</td>
+                        <td>45g</td>
+                        <td>40g</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: #c0c0c0; margin: 30px 0 20px 0; font-size: 1.4em; border-bottom: 2px solid #c0c0c0; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">MARTES (Proteína Cerdo)</h3>
+            <table class="nutrition-table">
+                <thead>
+                    <tr>
+                        <th>Comida</th>
+                        <th>Alimentos</th>
+                        <th>Proteína</th>
+                        <th>Carbs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Desayuno (7:30am)</strong></td>
+                        <td>Avena cocida • 1 huevo • Banana • Miel</td>
+                        <td>12g</td>
+                        <td>50g</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Almuerzo (12:30pm)</strong></td>
+                        <td>160g cerdo magro • Arroz integral • Zanahoria</td>
+                        <td>42g</td>
+                        <td>60g</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cena (7:00pm)</strong></td>
+                        <td>150g pechuga • Yuca cocida • Verduras</td>
+                        <td>40g</td>
+                        <td>45g</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: #c0c0c0; margin: 30px 0 20px 0; font-size: 1.4em; border-bottom: 2px solid #c0c0c0; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">MIÉRCOLES (Proteína Pollo)</h3>
+            <table class="nutrition-table">
+                <thead>
+                    <tr>
+                        <th>Comida</th>
+                        <th>Alimentos</th>
+                        <th>Proteína</th>
+                        <th>Carbs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Desayuno (7:30am)</strong></td>
+                        <td>2 arepas queso • Huevo frito • Café • Papaya</td>
+                        <td>14g</td>
+                        <td>48g</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Almuerzo (12:30pm)</strong></td>
+                        <td>170g pechuga pollo • Arroz blanco • Ensalada</td>
+                        <td>45g</td>
+                        <td>55g</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cena (7:00pm)</strong></td>
+                        <td>180g atún o res • Papas • Verduras variadas</td>
+                        <td>42g</td>
+                        <td>40g</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: #c0c0c0; margin: 30px 0 20px 0; font-size: 1.4em; border-bottom: 2px solid #c0c0c0; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">JUEVES (Proteína Atún/Pescado)</h3>
+            <table class="nutrition-table">
+                <thead>
+                    <tr>
+                        <th>Comida</th>
+                        <th>Alimentos</th>
+                        <th>Proteína</th>
+                        <th>Carbs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Desayuno (7:30am)</strong></td>
+                        <td>Pancakes avena • 2 claras huevo • Fresa • Miel</td>
+                        <td>13g</td>
+                        <td>50g</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Almuerzo (12:30pm)</strong></td>
+                        <td>2 latas atún • Arroz integral • Ensalada</td>
+                        <td>42g</td>
+                        <td>58g</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cena (7:00pm)</strong></td>
+                        <td>180g pechuga pollo • Batata cocida • Brócoli</td>
+                        <td>45g</td>
+                        <td>42g</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: #c0c0c0; margin: 30px 0 20px 0; font-size: 1.4em; border-bottom: 2px solid #c0c0c0; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">VIERNES (Proteína Pavo)</h3>
+            <table class="nutrition-table">
+                <thead>
+                    <tr>
+                        <th>Comida</th>
+                        <th>Alimentos</th>
+                        <th>Proteína</th>
+                        <th>Carbs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Desayuno (7:30am)</strong></td>
+                        <td>Arepa • Queso fresco • Huevo • Café • Naranja</td>
+                        <td>16g</td>
+                        <td>46g</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Almuerzo (12:30pm)</strong></td>
+                        <td>160g pechuga pavo • Arroz • Verduras mixtas</td>
+                        <td>48g</td>
+                        <td>60g</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cena (7:00pm)</strong></td>
+                        <td>150g res magra • Yuca • Ensalada verde</td>
+                        <td>38g</td>
+                        <td>42g</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: #c0c0c0; margin: 30px 0 20px 0; font-size: 1.4em; border-bottom: 2px solid #c0c0c0; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">SÁBADO (Proteína Mixta)</h3>
+            <table class="nutrition-table">
+                <thead>
+                    <tr>
+                        <th>Comida</th>
+                        <th>Alimentos</th>
+                        <th>Proteína</th>
+                        <th>Carbs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Desayuno (7:30am)</strong></td>
+                        <td>3 huevos revueltos • Pan integral • Aguacate • Café</td>
+                        <td>16g</td>
+                        <td>44g</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Almuerzo (12:30pm)</strong></td>
+                        <td>150g res molida • Papas al horno • Ensalada</td>
+                        <td>40g</td>
+                        <td>62g</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cena (7:00pm)</strong></td>
+                        <td>170g pechuga pollo • Arroz con caldo • Verduras</td>
+                        <td>44g</td>
+                        <td>48g</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: #c0c0c0; margin: 30px 0 20px 0; font-size: 1.4em; border-bottom: 2px solid #c0c0c0; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">DOMINGO (Día Ligero)</h3>
+            <table class="nutrition-table">
+                <thead>
+                    <tr>
+                        <th>Comida</th>
+                        <th>Alimentos</th>
+                        <th>Proteína</th>
+                        <th>Carbs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Desayuno (8:00am)</strong></td>
+                        <td>Arepa con queso • Huevo • Café • Manzana</td>
+                        <td>14g</td>
+                        <td>42g</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Almuerzo (1:00pm)</strong></td>
+                        <td>150g pechuga pollo • Arroz blanco • Salsa criolla</td>
+                        <td>40g</td>
+                        <td>52g</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cena (6:30pm) LIGERA</strong></td>
+                        <td>120g pechuga pollo • Verduras cocidas • Caldo</td>
+                        <td>32g</td>
+                        <td>28g</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="background: linear-gradient(135deg, rgba(192, 192, 192, 0.1) 0%, rgba(192, 192, 192, 0.05) 100%); padding: 20px; border-radius: 10px; margin-top: 30px; border-left: 5px solid #c0c0c0; color: #e0e0e0;">
+                <p><strong>📋 NOTAS IMPORTANTES:</strong></p>
+                <p style="margin-top: 10px;">✓ Este ciclo de 7 días se repite toda la semana</p>
+                <p>✓ Todas las verduras: brócoli, zanahorias, espinaca, lechuga (sin límite)</p>
+                <p>✓ Aceites: máximo 1 cucharada en cada comida</p>
+                <p>✓ Bebidas: agua ilimitada, café sin azúcar, té</p>
+                <p>✓ Carnes: siempre magras (pechuga, res molida magra, cerdo magro)</p>
+                <p style="margin-top: 10px; color: #a0a0a0; font-size: 0.95em;">Total proteína: ~100-130g/día | Total carbs: ~140-160g/día | Calorías: ~2,000-2,200</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong style="color: #c0c0c0;">💎 RUTINA ANDREA COMPLETA • LUXURY DARK EDITION</strong></p>
+        <p>Plan Integral • Todos los Ejercicios • Alimentos Colombianos • 7 Días Nutrición</p>
+        <p style="margin-top: 15px; font-size: 0.85em;">Junio 2026 • Plan Personalizado para Cambio de Composición Corporal</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.nutrition-table').forEach(table => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'table-responsive';
+            table.parentNode.insertBefore(wrapper, table);
+            wrapper.appendChild(table);
+        });
+
+        function switchTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
